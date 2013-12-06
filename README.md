@@ -21,15 +21,22 @@ Compress, encrypt, and upload to Glacier in one piped command:
 
 On success, output is returned like this:
 
+    $ deepfreeze
     Upload Successful. Upload ID:
-    $AWS_UPLOAD_ID
+    TIubeOaLT79H_0hp6EDEUk4IYr4K9w76JG9vj2V1AFAe4OYK8HK1G5lTRQKxuF2M5VKyvVKRbUg7HNpKcC6UGrO27zFfxZeJP7Q-Ds4hKtxbnYO5PxTzfw1768Yy2sJ6dPXAQ06rUw
 
 If you'd like, you can change the output to just the upload ID with the `-o` param:
+
+    $ deepfreeze -o id filename.txt
+    TIubeOaLT79H_0hp6EDEUk4IYr4K9w76JG9vj2V1AFAe4OYK8HK1G5lTRQKxuF2M5VKyvVKRbUg7HNpKcC6UGrO27zFfxZeJP7Q-Ds4hKtxbnYO5PxTzfw1768Yy2sJ6dPXAQ06rUw
+
+Upload a compressed and encrypted file to Glacier, then send email with the upload id:
 
     UPLOAD_ID="$(cat filename.txt | gzip --encrypt --recipient "joe@mail.com" | \
         deepfreeze -o id)"
 
-    mail -s "$(date +%Y/m/%d) Backup Created for filename.txt" << END_DOCUMENT
+    mail -s "$(date +%Y/m/%d) Backup Created for filename.txt" \
+        -b "joe@mail.com" << END_DOCUMENT
     A Glacier backup has been created for filename.txt on $(date +%Y/%m/%d) at
     $(date +%H:%M:%S).
 
