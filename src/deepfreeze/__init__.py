@@ -107,9 +107,9 @@ def cli():
     parser.add_argument('--aws-secret-access-key', type=str, default=os.environ.get('AWS_SECRET_ACCESS_KEY'),
                         help="The AWS secret access key with which to authenticate. If not specified, it will default "
                              "to the value of the AWS_SECRET_ACCESS_KEY environment variable.")
-    parser.add_argument('-r', '--region', type=str, default=os.environ.get('AWS_REGION'),
+    parser.add_argument('-r', '--region', type=str, default=os.environ.get('AWS_GLACIER_REGION') or 'us-east-1',
                         help="The AWS region to use. If not specified, it will default to the value of the "
-                             "AWS_REGION environment variable, or will use the default region.")
+                             "AWS_REGION environment variable, or will use the default region (us-east-1).")
     parser.add_argument('-v', '--vault', type=str, default=os.environ.get('AWS_GLACIER_VAULT'),
                         help="The AWS Glacier vault to use. If not specified, it will default to the value of the "
                              "AWS_GLACIER_VAULT environment variable.")
