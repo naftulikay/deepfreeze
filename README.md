@@ -17,7 +17,24 @@ Upload a known file using environment variables:
 
 Compress, encrypt, and upload to Glacier in one piped command:
 
-    gzip -c myfile | gpg --encrypt --sign --recipient "destemail@mail.com" | deepfreeze
+    gzip -c filename.txt | gpg --encrypt --recipient "joe@mail.com" | deepfreeze
+
+On success, output is returned like this:
+
+    Upload Successful. Upload ID:
+    $AWS_UPLOAD_ID
+
+If you'd like, you can change the output to just the upload ID with the `-o` param:
+
+    UPLOAD_ID="$(cat filename.txt | gzip --encrypt --recipient "joe@mail.com" | \
+        deepfreeze -o id)"
+
+    mail -s "$(date +%Y/m/%d) Backup Created for filename.txt" << END_DOCUMENT
+    A Glacier backup has been created for filename.txt on $(date +%Y/%m/%d) at
+    $(date +%H:%M:%S).
+
+    The Glacier upload id is $(UPLOAD_ID).
+    END_DOCUMENT
 
 ## Installation ##
 
