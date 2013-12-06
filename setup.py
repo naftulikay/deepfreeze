@@ -32,5 +32,4 @@ setup(
             'deepfreeze = deepfreeze:cli',
         ]
     },
-    zip_safe=True,
 )
