@@ -1,7 +1,7 @@
 deepfreeze
 ==========
 
-A simple command-line utility to upload files to Amazon Glacier
+A simple command-line utility to upload files to Amazon Glacier.
 
 ## Examples ##
 
@@ -45,4 +45,12 @@ Upload a compressed and encrypted file to Glacier, then send email with the uplo
 
 ## Installation ##
 
-Two options exist for
+The easiest way to install `deepfreeze` is with `pip`:
+
+    sudo pip install deepfreeze
+
+Alternatively, you can install `deepfreeze` from source:
+
+    git clone git@github.com:rfkrocktk/deepfreeze.git
+    cd deepfreeze
+    sudo python setup.py install
