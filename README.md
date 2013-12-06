@@ -13,7 +13,7 @@ Upload a known file using command-line arguments:
 Upload a known file using environment variables:
 
     AWS_ACCESS_KEY_ID="ACCESS_KEY" AWS_SECRET_ACCESS_KEY="SECRET_ACCESS_KEY" \
-        AWS_REGION="AWS_REGION" AWS_GLACIER_VAULT="VAULT_NAME" deepfreeze filename.txt
+        AWS_GLACIER_REGION="AWS_REGION" AWS_GLACIER_VAULT="VAULT_NAME" deepfreeze filename.txt
 
 Compress, encrypt, and upload to Glacier in one piped command:
 
