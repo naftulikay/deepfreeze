@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="buildout-python" name="Buildout Support">
       <configuration>
-        <option name="script" value="$MODULE_DIR$/bin/buildout" />
+        <option name="script" value="$MODULE_DIR$/bin/ipython" />
       </configuration>
     </facet>
   </component>
@@ -11,7 +11,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 2.7.3 (/usr/bin/python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Buildout Eggs" level="project" />
   </component>
